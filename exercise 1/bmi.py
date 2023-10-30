@@ -5,11 +5,12 @@ def calculate_bmi(height, weight):
     bmi = weight/(pow(height, 2))
     print(bmi)
     if bmi < 18.5:
-        print("underweight")
+        return -1
     elif 18.5 <= bmi <= 25:
-        print("Normal weight")
+        return 0
     else:
-        print("Overweight")
+        return 1
+
 
 
 calculate_bmi(weight=57, height=1.73)
