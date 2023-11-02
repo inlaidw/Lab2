@@ -2,24 +2,29 @@ def display_main_menu():
     print("Enter some numbers separated by commas (e.g. 5, 67, 32)")
     get_user_input()
 
+
 def get_user_input():
     userinput = input().split(",")
     userinput = [float(item) for item in userinput]
     print(userinput)
-    calc_average_temperature(userinput)
-    calc_min_max_temperature(userinput)
+    calc_average(userinput)
+    find_min_max(userinput)
     calc_median_temperature(userinput)
 
-def calc_average_temperature(data):
+
+def calc_average(data):
     total = sum(data)
     avg = total / len(data)
-    print("The average is : "+str(avg))
+    print("The avg is: " + str(avg))
+    return avg
 
 
-def calc_min_max_temperature(x):
-    dmax = max(x)
-    dmin = min(x)
-    print("Min is: " + str(dmin) + " Max is: " + str(dmax))
+def find_min_max(data):
+    dmax = max(data)
+    dmin = min(data)
+    print("Min is: " + str(dmin) + "Max is: " + str(dmax))
+    return [dmin,dmax]
+
 
 def sort_temperature(data):
     data = sorted(data)
@@ -32,7 +37,4 @@ def calc_median_temperature(data):
 
     median = data[numdata]
     print("The Median is: "+str(median))
-
-
-
-display_main_menu()
+    return median
